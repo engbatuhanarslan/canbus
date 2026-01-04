@@ -5,17 +5,7 @@
 // PD1 -> CAN1_TX
 // Alt Function: AF8 (CAN1)
 
-extern CAN_HandleTypeDef
-    hcan1; // Defined in main.c by CubeMX usually, or we define it here if not.
-// Assuming checking if user uses CubeMX generated handle or my previous one.
-// Since user is configuring CubeMX, it will generate 'hcan1' in main.c or
-// can.c. To satisfy both "library" approach and "CubeMX" approach, I will
-// define it if not extern, but to be safe with CubeMX generated code, I'll rely
-// on the user passing it or using global. For now, I will keep defining it here
-// static to avoid conflict IF we are Standalone. BUT user showed CubeMX
-// screenshots. CubeMX generates 'CanHandle' or 'hcan1' in main.c. Let's stick
-// to my previous implementation which was self-contained, but add Interrupt
-// support.
+extern CAN_HandleTypeDef hcan1;
 
 // CAN_HandleTypeDef hcan1; // Removed to avoid multiple definition (defined in
 // main.c)
